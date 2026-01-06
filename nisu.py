@@ -11,38 +11,35 @@ def load_lottieurl(url):
         return None
     return r.json()
 
-# ලස්සන Heart animation එකක්
+# Heart animation එක
 lottie_heart = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_6aYlH6.json")
 
 # --- UI එක සැකසීම ---
 
-# Heading එක ගොඩක් ලොකුවට (Font size 80px)
+# ප්‍රධාන Heading එක (ගොඩක් ලොකුවට)
 st.markdown("""
-    <h1 style='text-align: center; font-size: 80px; color: #ff4b4b; font-family: sans-serif;'>
+    <h1 style='text-align: center; font-size: 80px; color: #ff4b4b; font-family: 'Arial Black', sans-serif;'>
         Nisu Nayama
     </h1>
     """, unsafe_allow_html=True)
 
-# Animation එක මැදට
+# Animation එක
 if lottie_heart:
     st_lottie(lottie_heart, height=300, key="heart")
 
 st.write("---")
 
-# ප්‍රශ්නය අහන කොටස
+# ප්‍රශ්නය
 st.markdown("<h2 style='text-align: center;'>ඔයා මට කැමතිද? 😍</h2>", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+# Buttons දෙක මැදට ගන්න columns පාවිච්චි කිරීම
+col1, col2, col3 = st.columns([1, 1, 1])
 
-with col1:
+with col2:
     if st.button('ඔව්, ගොඩක්! ❤️'):
         st.balloons()
         st.success("මමත් ඔයාට ගොඩක් ආදරෙයි! 🥰")
         st.snow()
 
-with col2:
-    if st.button('නැහැ ☹️'):
-        st.warning("අයියෝ... ඇයි ඒ? 💔")
-
-# යටින් පොඩි Note එකක්
-st.markdown("<br><p style='text-align: center; color: grey;'>Made with love by Isuru</p>", unsafe_allow_html=True)
+# යටින් වැටෙන ලස්සන Message එක
+st.markdown("<br><br><p style='text-align: center; color: #ff4b4b; font-weight: bold; font-size: 20px;'>Made with love you Ayush</p>", unsafe_allow_html=True)
